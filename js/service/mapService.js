@@ -11,7 +11,7 @@ function getUserData() {
     return loadFromStorage(STORAGE_KEY)
 }
 
-function _createMarkData(id, lat, lng, name) {
+function createMarkData(id, lat, lng, name) {
     return {
         id,
         lat,
@@ -21,7 +21,7 @@ function _createMarkData(id, lat, lng, name) {
 }
 
 function saveMarkers(id, lat, lng, name) {
-    gMarkers.push(_createMarkData(id, lat, lng, name))
+    gMarkers.push(createMarkData(id, lat, lng, name))
     console.log(gMarkers);
     saveToStorage(SAVED_LOCATIONS, gMarkers)
 }

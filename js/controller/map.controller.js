@@ -46,9 +46,8 @@ function showLocation(pos) {
 
 
 function initMap(lat = 2, lng = 3) {
-    if (returnMarkers().length === null || !returnMarkers()) {
-        saveMarkers(makeId(), lat, lng, 'Home')
-    }
+
+    let arr = []
     let contentStr = `<h3>Home </h3>`
     let elMap = document.querySelector('.map')
     let { mapCoordsLat: userLat, mapCoordsLong: userLng, zoom: userZoom } = getUserData()
@@ -78,6 +77,12 @@ function initMap(lat = 2, lng = 3) {
         draggable: (lat > 85.04 || lat < -85.04) ? false : true
     })
 
+    let currMarkers = returnMarkers()
+    console.log(currMarkers);
+    if (currMarkers === null) {
+        arr.push(createMarkData(makeId(), lat, lng, 'Home'))
+        updateMarkers(arr)
+    }
     getClickPos(map, marker)
     marker.addListener("click", () => {
         infowindow.open({
@@ -102,7 +107,7 @@ function initMap(lat = 2, lng = 3) {
 
 function saveMarkerData(ev, id) {
     ev.preventDefault()
-    $('')
+
 }
 
 function addMarker(id, map, location) {
