@@ -46,7 +46,7 @@ function showLocation(pos) {
 
 
 function initMap(lat = 2, lng = 3) {
-    if (returnMarkers().length === 0 || !returnMarkers()) {
+    if (returnMarkers().length === null || !returnMarkers()) {
         saveMarkers(makeId(), lat, lng, 'Home')
     }
     let contentStr = `<h3>Home </h3>`
