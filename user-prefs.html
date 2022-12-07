@@ -14,9 +14,6 @@
 </head>
 
 <body>
-    <header>
-        <a href="./index.html">Back to main page</a> <br /><br />
-    </header>
 
     <section>
         <form id="user-prefs" onsubmit="onSubmitForm(event)">
@@ -39,17 +36,25 @@
             </label> <br />
 
             <!-- Text area for map coords (Lat, lng) -->
-            <label for="coords">Map Start Location: <input id="coords" required type="text"></label> <br />
+            <label for="coords"></label>Map Start Location: <br />
+            Lat&#xb0; <input id="coords-lat" required type="text"> <br />
+            Long&#xb0;<input id="coords-long" required type="text">
+            <br />
 
             <button>Save</button>
         </form>
     </section>
 
+
+
+    <a class="btn btn-primary" href="./index.html">Back to main page</a> <br /><br />
+
     <script src="lib/jquery/jquery.js"></script>
-    <script src="./js/service/utilService.js"></script>
     <script src="./js/service/storageService.js"></script>
+    <script src="./js/service/utilService.js"></script>
     <script src="./js/controller/userpref.controller.js"></script>
     <script src="./js/service/userService.js"></script>
+    <script src="./js/controller/main.controller.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

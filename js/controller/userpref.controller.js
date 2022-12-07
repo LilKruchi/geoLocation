@@ -21,14 +21,16 @@ function onSubmitForm(ev) {
     let bgColor = $('#bg-color').val()
     let txtColor = $('#txt-color').val()
     let zoom = $('#zoom').val()
-    let mapCoords = $('#coords').val()
+    let mapCoordsLat = $('#coords-lat').val()
+    let mapCoordsLong = $('#coords-long').val()
 
     let userData = {
         firstName,
         bgColor,
         txtColor,
         zoom,
-        mapCoords
+        mapCoordsLat,
+        mapCoordsLong,
     }
     // console.log(userData);
     saveUserData(userData)
